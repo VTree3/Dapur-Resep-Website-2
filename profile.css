@@ -1,0 +1,137 @@
+.logoDapur{
+    width: 30%;
+    height: 50%;
+    margin-left: 20%;
+}
+
+.menuHeader li{
+    margin-left: 30px;
+    margin-right: 30px;
+    box-sizing: border-box;
+}
+
+.menuOff{
+    color: #BB371A;
+    font-size: 18px;
+}
+
+.menuHeader li a:hover{
+    color: black;
+    font-weight: bold;
+}
+
+.menuActive{
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #BB371A !important;
+    border-color: #BB371A !important;
+    font-weight: bold !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 8px !important;
+}
+
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline-primary:visited {
+    background-color: #fff !important;
+    border-color: #BB371A !important;
+    border-style: solid !important;
+    border-width: 3px !important;
+    color: #BB371A !important;
+    font-weight: bold !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 8px !important;
+}
+
+.btnLogin {
+    margin-left: 80px;
+    margin-right: 20px;
+}
+
+.btnSignup {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.logoDapurFooter{
+    width: 6%;
+    height: 6%;
+    margin-left: 1%;
+}
+
+.card-footer{
+    background-color: #fff !important;
+    border-top: none !important;
+}
+
+.card-custom{
+    padding: 0px !important;
+    border: none !important;
+}
+
+.banner-profile{
+    height: 400px;
+    width: 100%;
+}
+
+.poto-position{
+    margin-top: 20%;
+    margin-left: 2rem;
+    position: absolute;
+}
+
+.name-position{
+    position: absolute;
+    margin-top: 28%;
+    margin-left: 14%;
+}
+
+.follow-position{
+    height: 140px;
+}
+
+.navbar .navbar-nav .nav-link {
+    color: #000000;
+    font-size: 1.1em;
+  }
+  .navbar .navbar-nav .nav-link:hover {
+    color: #000000;
+  }
+  .navbar .navbar-nav .nav-item {
+    position: relative;
+  }
+  .navbar .navbar-nav .nav-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000000;
+    width: 0%;
+    content: "";
+    height: 4px;
+    transition: all 0.5s;
+  }
+  
+  .navbar .navbar-nav .nav-item:hover::after {
+    width: 100%;
+  }
+
+  .navActive{
+      color: #EBA83A !important;
+      font-weight: bold;
+      border: 1px solid;
+      border-bottom: none;
+      border-color: #EBA83A;
+      border-radius: 20px;
+  }
+
+
+  .image-sizer{
+      width: 100%;
+      height: 30%;
+  }

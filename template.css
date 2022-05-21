@@ -1,0 +1,61 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin-top: 5rem;
+    overflow-x: hidden;
+}
+
+.logoDapur{
+    width: 30%;
+    height: 50%;
+    margin-left: 20%;
+}
+
+.fontwarna1{
+    color: #BB371A;
+}
+
+.fontwarna2{
+    color: #D5DBB3;
+}
+
+.warna1{
+    background-color: #EBA83A !important;
+}
+
+.warna2{
+    background-color: #FFF8D9 !important;
+}
+
+.warna3{
+    background-color: #D5DBB3 !important;
+}
+
+.warna4{
+    background-color: #BB371A !important;
+}
+
+.warnastar{
+    color: yellow;
+}
+
+.rounded-head{
+    border-radius: 40px 40px 0 0 !important;
+    overflow: hidden !important;
+}
+
+.rounded-40px{
+    border-radius: 0 0 40px 40px !important;
+    overflow: hidden !important;
+}
+
+.text-black{
+    color: black;
+}
+
+.btnLogout{
+    margin-left: 60%;
+}

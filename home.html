@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapur Resep</title>
+    <link rel="shortcut icon" href="assets/Dapur-removebg-preview.png" type="image/jpg">
+
+    <!-- css -->
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="template.css">
+
+</head>
+<body>
+
+    <!-- header -->
+    <div class="fixed-top">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 border-bottom warna1">
+          <a href="home.html" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="assets/Dapur.png" alt="logo" class="logoDapur">
+          </a>
+    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 menuHeader">
+            <li><a href="home.html" class="nav-link px-2 menuActive">Home</a></li>
+            <li><a href="recipes.html" class="nav-link px-2 menuOff">Recipes</a></li>
+            <li><a href="advancedSearch.html" class="nav-link px-2 menuOff ">Advanced Search</a></li>
+            <li><a href="profile.html" class="nav-link px-2 menuOff">Profile</a></li>
+          </ul>
+          
+          <div class="col-md-3">
+            <a href="login.html" class="btn btn-primary my-2 btnLogin" > Login </a>
+            <!-- <button type="button" class="btn btn-primary">Login</button> -->
+            <a href="register.html" class="btn btn-outline-primary my-2 my-sm-0 btnSignup" > Sign Up </a>
+            <a href="home.html" class="btn btn-outline-primary my-2 my-sm-0 btnLogout" hidden> Logout </a>
+          </div>
+        </header>
+    </div>
+
+    <!-- content -->
+
+    <div class="warna2">
+
+      
+      <!-- search box -->
+      <div class="container py-5">
+        <div class="input-group rounded">
+          <input type="search" class="form-control rounded" placeholder="Cari resep" aria-label="Search" aria-describedby="search-addon" />
+          <span class="input-group-text border-0" id="search-addon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <!-- resep populer hari ini -->
+      <div class="container py-5">
+        <h2 class="mt-2 text-center fontwarna1">Resep Populer Hari ini</h2>
+        <hr>
+        <div class="row justify-content-center my-5">
+
+          <a href="recipe.html">
+            <!-- card 1 -->
+            <div class="col-md-4 mx-5">
+              <div class="card warna3 rounded-3 border border-1 border-dark shadow-lg">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="assets/ayamladahitam.jpg" class="img-fluid"/>
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Ayam Lada Hitam</h5>
+                  <p class="card-text">Bumbu lada hitam yang pedasnya khas selalu bikin bahan apa pun jadi lebih istimewa. Tidak terkecuali ayam. Pastikan saus lada hitam enaknya maksimal dengan racikan bumbu yang pas. Resep ayam lada hitam ini punya racikan bumbu dan sausnya pas.</p>
+                </div>
+                <hr class="my-0">
+                <div class="card-footer mx-auto warna3">
+                  <!-- star1 -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <!-- star2 -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <!-- star3 -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <!-- halfstar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                    <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                  </svg>
+                  <!-- no star -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="recipe.html">
+            <!-- card 2 -->
+            <div class="col-md-4 mx-5">
+              <div class="card warna3 rounded-3 border border-1 border-dark shadow-lg">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="assets/ayamladahitam.jpg" class="img-fluid"/>
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Ayam Lada Hitam</h5>
+                  <p class="card-text">Bumbu lada hitam yang pedasnya khas selalu bikin bahan apa pun jadi lebih istimewa. Tidak terkecuali ayam. Pastikan saus lada hitam enaknya maksimal dengan racikan bumbu yang pas. Resep ayam lada hitam ini punya racikan bumbu dan sausnya pas.</p>
+                </div>
+                <hr class="my-0">
+                <div class="card-footer mx-auto warna3">
+                  <!-- star1 -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <!-- star2 -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <!-- star3 -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                    <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                  </svg>
+                  <!-- halfstar -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half" viewBox="0 0 16 16">
+                    <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                  </svg>
+                  <!-- no star -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                    <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="warna3">
+      <section class="py-4 text-center container">
+        <div class="row py-1">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light fontwarna1">Tips</h1>
+            <hr>
+            <p class="lead text-muted">Find an useful tips for your daily cooking activites.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- tips -->
+      <div class="container py-1">
+        <div class="row justify-content-center mb-5">
+          
+            <!-- card 1 -->
+            <div class="col">
+              <div class="card warna3 rounded-3 border border-1 border-dark shadow-lg">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img src="assets/Cooking-Tips0.jpg" class="img-fluid"/>
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">How to clean fishes for cooking</p>
+                </div>
+              </div>
+            </div>
+
+          <!-- card 2 -->
+          <div class="col">
+            <div class="card warna3 rounded-3 border border-1 border-dark shadow-lg">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="assets/Cooking-Tips0.jpg" class="img-fluid"/>
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <p class="card-text">How to clean fishes for cooking</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- card 3 -->
+          <div class="col">
+            <div class="card warna3 rounded-3 border border-1 border-dark shadow-lg">
+              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                <img src="assets/Cooking-Tips0.jpg" class="img-fluid"/>
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <p class="card-text">How to clean fishes for cooking</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="warna2">
+      <section class="py-4 text-center container">
+        <div class="row py-1">
+          <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light fontwarna1">News</h1>
+            <hr>
+            <p class="lead text-muted">Discover what's happening in culinary world</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="container py-3">
+
+        <!-- card1 -->
+        <div class="card mb-5 shadow border border-dark rounded-3 warna3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/news2.jpg" class="img-fluid rounded-start imgnews" alt="news">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Indonesia Seizes Cooking Oil shipment bound for East Timor</h5>
+                <p class="card-text">KONTAN.CO.ID - JAKARTA. Indonesia has impounded at least 81,000 litres of cooking oil bound for East Timor, the trade ministry said, as the Southeast Asian country seeks to enforce a ban on exports of crude palm oil and its derivatives including cooking oil.
+
+                    At least eight shipping containers holding cooking oil and other items were confiscated at Tanjung Perak port on April 28 in Surabaya on Java island after "the ship deceived (authorities) by not listing cooking oil in the export declaration document," the trade ministry said in a statement late on Thursday.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+           <!-- card2 -->
+        <div class="card mb-5 shadow border border-dark rounded-3 warna3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/news2.jpg" class="img-fluid rounded-start imgnews" alt="news">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Indonesia Seizes Cooking Oil shipment bound for East Timor</h5>
+                <p class="card-text">KONTAN.CO.ID - JAKARTA. Indonesia has impounded at least 81,000 litres of cooking oil bound for East Timor, the trade ministry said, as the Southeast Asian country seeks to enforce a ban on exports of crude palm oil and its derivatives including cooking oil.
+
+                    At least eight shipping containers holding cooking oil and other items were confiscated at Tanjung Perak port on April 28 in Surabaya on Java island after "the ship deceived (authorities) by not listing cooking oil in the export declaration document," the trade ministry said in a statement late on Thursday.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+ 
+
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #EBA83A">
+      <div class="">
+        <img src="assets/Dapur.png" alt="logoFooter" class="logoDapurFooter mt-2">
+
+        <section class="mt-2">
+
+          <div class="row text-center d-flex justify-content-center">
+            <div class="col-md-2">
+              <h6 class="text-uppercase">
+                <a href="#!" class="text-black">Terms of Service</a>
+              </h6>
+            </div>
+  
+            <div class="col-md-2">
+              <h6 class="text-uppercase">
+                <a href="#!" class="text-black">Privacy Policy</a>
+              </h6>
+            </div>
+  
+            <div class="col-md-2">
+              <h6 class="text-uppercase ">
+                <a href="#!" class="text-black">Security</a>
+              </h6>
+            </div>
+  
+            <div class="col-md-2">
+              <h6 class="text-uppercase">
+                <a href="#!" class="text-black">Sitemap</a>
+              </h6>
+            </div>
+  
+          </div>
+        </section>
+
+        <br>
+  
+        <section class="justify-content-lg-around mb-2">
+          <a href="" class="text-black mx-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+              </svg>
+          </a>
+          <a href="" class="text-black mx-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+              </svg>
+          </a>
+          <a href="" class="text-black mx-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+            </svg>
+          </a>
+          <a href="" class="text-black mx-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+              </svg>
+          </a>
+        </section>
+      </div>
+  
+      <div
+           class="text-center p-3"
+           style="background-color: #EBA83A"
+           >
+           <h6 class="text-black">© All Rights Reserved. CL Inc.</h6>
+        
+      </div>
+
+    </footer>
+
+
+</body>
+</html>
