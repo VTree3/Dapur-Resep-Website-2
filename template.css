@@ -1,3 +1,27 @@
+@font-face {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Jost'), url('Jost/static/Jost-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gentium Book Basic';
+    font-style: normal;
+    font-weight: 500;
+    src: URL('Gentium_Book_Basic/GentiumBookBasic-Regular.ttf') format('truetype');
+    
+  }
+
+.fontface1{
+    font-family: 'Gentium Book Basic';
+}
+
+.fontface2{
+    font-family:'Jost';
+}
+
+
 
 html {
     scroll-behavior: smooth;
@@ -7,6 +31,8 @@ body {
     margin-top: 5rem;
     overflow-x: hidden;
 }
+
+
 
 .logoDapur{
     width: 30%;
@@ -38,8 +64,8 @@ body {
     background-color: #BB371A !important;
 }
 
-.warnastar{
-    color: yellow;
+.yelloww{
+    color: #eba83a !important;
 }
 
 .rounded-head{
@@ -58,4 +84,15 @@ body {
 
 .btnLogout{
     margin-left: 60%;
+}
+
+.footer-icon a:hover{
+    text-decoration: none !important;
+    color: currentColor !important;
+}
+
+.btn-success{
+    background-color: #BB371A  !important;
+    border-color: #EBA83A !important;
+    box-sizing: border-box !important;
 }

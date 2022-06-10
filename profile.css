@@ -79,19 +79,22 @@
 }
 
 .poto-position{
-    margin-top: 20%;
+    margin-top: -5%;
     margin-left: 2rem;
-    position: absolute;
+    z-index: 2;
 }
 
 .name-position{
-    position: absolute;
-    margin-top: 28%;
-    margin-left: 14%;
+    margin-left: 13%;
+}
+
+.detail-position{
+    margin-left: 67%;
 }
 
 .follow-position{
     height: 140px;
+    margin-top: -150px;
 }
 
 .navbar .navbar-nav .nav-link {

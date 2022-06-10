@@ -1,16 +1,34 @@
+<?php 
+require 'functions.php';
+
+if(isset($_POST["register"])){
+    if (regis($_POST) > 0){
+        echo "<script>
+                alert ('New user successful added');
+            </script>";
+
+        header("Location: login.php");
+        exit;
+    }else{
+        echo mysqli_error($conn);
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dapur Resep</title>
-    <link rel="shortcut icon" href="assets/Dapur-removebg-preview.png" type="image/jpg">
+    <title>Sign Up</title>
+    <link rel="shortcut   icon" href="assets/Dapur-removebg-preview.png" type="image/jpg">
 
     <!-- css -->
-    <link rel="stylesheet" href="partners.css">
+    <link rel="stylesheet" href="register.css">
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="template.css">
 
 </head>
@@ -18,26 +36,25 @@
 
     <!-- header -->
     <div class="fixed-top fontface2">
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 border-bottom warna1">
-        <a href="index.html" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-          <img src="assets/Dapur.png" alt="logo" class="logoDapur">
-        </a>
-  
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 menuHeader">
-          <li><a href="index.html" class="nav-link px-2 menuOff">Home</a></li>
-          <li><a href="recipe.html" class="nav-link px-2 menuOff">Recipes</a></li>
-          <li><a href="advancedSearch.html" class="nav-link px-2 menuOff">Advanced Search</a></li>
-          <li><a href="login.php" class="nav-link px-2 menuOff">Profile</a></li>
-        </ul>
-        
-        <div class="col-md-3">
-          <a href="login.php" class="btn btn-primary my-2 btnLogin"> Login </a>
-          <!-- <button type="button" class="btn btn-primary">Login</button> -->
-          <a href="register.php" class="btn btn-outline-primary my-2 my-sm-0 btnSignup"> Sign Up </a>
-          <a href="index.html" class="btn btn-outline-primary my-2 my-sm-0 btnLogout" hidden> Logout </a>
-        </div>
-      </header>
-  </div>
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 border-bottom warna1">
+          <a href="index.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+            <img src="assets/Dapur.png" alt="logo" class="logoDapur">
+          </a>
+    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 menuHeader">
+            <li><a href="index.php" class="nav-link px-2 menuOff">Home</a></li>
+            <li><a href="recipe.html" class="nav-link px-2 menuOff">Recipes</a></li>
+            <li><a href="advancedSearch.html" class="nav-link px-2 menuOff">Advanced Search</a></li>
+            <li><a href="login.php" class="nav-link px-2 menuOff">Profile</a></li>
+          </ul>
+          
+          <div class="col-md-3">
+            <a href="login.php" class="btn btn-primary my-2 btnLogin"> Login </a>
+            <!-- <button type="button" class="btn btn-primary">Login</button> -->
+            <a href="register.php" class="btn btn-outline-primary my-2 my-sm-0 btnSignup"> Sign Up </a>
+          </div>
+        </header>
+    </div>
 
 
     <!-- content -->
@@ -46,59 +63,138 @@
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-9">
       
-              <h1 class="text-red mb-4 text-center font-weight-bold fontface2">OUR PARTNERS</h1>
-
-              <div class="card mb-5" style="border-radius: 15px;">
+              <h1 class="text-red mb-4 text-center fontface2">Welcome to Dapur Resep!</h1>
+      
+              <div class="card mb-4" style="border-radius: 15px; background-color: #bb371a; color: #d5dbb3;">
+                    <div class="card-body fontface1">
+                        <h3>Register Your Account</h2>
+                        <h6>Already signed up? <a href="login.php" class="text-yellow">Log In</a></h6> 
+                    </div>
+              </div>
+              <div class="card mb-4" style="border-radius: 15px;">
                 <div class="card-header fontface2" style="border-top-left-radius: 15px;border-top-right-radius: 15px; background-color: #bb371a; color: #d5dbb3;" >
-                  <h3>Ingredient Marketplace</h3>
+                  <h3>Account Details</h3>
                 </div>
                 <div class="card-body mb" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background-color: #d5dbb3;">
+                  
+                <form action="" class="fontface2" method="POST">
                   <div class="row align-items-center pt-4 pb-3">
-                    <div class="col-xs-6 ml-auto mr-auto">
-                        <img src="assets/tokopedia.png" alt="" style="width:10vw;">
+                    <div class="col-md-3 ps-5">
+      
+                      <h6 class="mb-0 ">First name</h6>
+      
                     </div>
-                    <div class="col-xs-6 ml-0 mr-auto">
-                        <button class="btn btn-success text-left font-weight-bold border-right-0 rounded-0 square partnerbutton fontface2">Tokopedia 
-                        <a href="https://www.tokopedia.com">
-                          <button class="btn btn-success border-left-0 rounded-0 partnerbutton2" type="button">
-                                  <i class="fa fa-arrow-right"></i>
-                          </button>
-                        </a>
-                      </button>
+                    <div class="col-md-9 pe-5">
+      
+                      <input type="text" name="username" id="username" class="form-control form-control-md btn-outline-secondary" placeholder="Input your first name" required/>
+      
                     </div>
                   </div>
       
+                 
 
                   <div class="row align-items-center pt-4 pb-3">
-                    <div class="col-xs-6 ml-auto mr-auto">
-                        <img src="assets/indomart.png" alt="" style="width:10vw;">
+                    <div class="col-md-3 ps-5">
+      
+                      <h6 class="mb-0">Last name</h6>
+      
                     </div>
-                    <div class="col-xs-6 ml-0 mr-auto">
-                        <button class="btn btn-success text-left font-weight-bold border-right-0 rounded-0 square partnerbutton fontface2">KlikIndomaret
-                          <a href="https://www.klikindomaret.com">
-                            <button class="btn btn-success border-left-0 rounded-0 partnerbutton2" type="button">
-                                    <i class="fa fa-arrow-right"></i>
-                            </button>
-                          </a>
-                        </button>
+                    <div class="col-md-9 pe-5">
+      
+                      <input type="text" class="form-control form-control-md btn-outline-secondary"  placeholder="Input your last name" required/>
+      
                     </div>
                   </div>
-                        
-                  <div class="row align-items-center pt-5 pb-5">
-                    <div class="col-xs-6 ml-auto mr-auto">
-                        <img src="assets/happyfresh.png" alt="" style="width:10vw;">
+      
+                  
+      
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+      
+                      <h6 class="mb-0">Email address</h6>
+      
                     </div>
-                    <div class="col-xs-6 ml-0 mr-auto">
-                        <button class="btn btn-success text-left font-weight-bold border-right-0 rounded-0 square partnerbutton fontface2">Happyfresh
-                          <a href="https://www.happyfresh.id">
-                            <button class="btn btn-success border-left-0 rounded-0 partnerbutton2" type="button">
-                                    <i class="fa fa-arrow-right"></i>
-                            </button>
-                          </a>
-                        </button>
+                    <div class="col-md-9 pe-5">
+      
+                      <input type="email" class="form-control form-control-md btn-outline-secondary" placeholder="example@example.com" required/>
+      
                     </div>
                   </div>
+    
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+      
+                      <h6 class="mb-0" >Phone Number</h6>
+      
+                    </div>
+                    <div class="col-md-9 pe-5">
+      
+                      <input type="number" class="form-control form-control-md btn-outline-secondary" placeholder="+62xxx xxxx xxxx" required/>
+      
+                    </div>
+                  </div>
+                 
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+      
+                      <h6 class="mb-0">Instagram (optional)</h6>
+      
+                    </div>
+                    <div class="col-md-9 pe-5">
+      
+                      <input type="text" class="form-control form-control-md btn-outline-secondary"  />
+      
+                    </div>
+                  </div>
+      
+                </div>
+            </div>
 
+                <div class="card mb-4 fontface2" style="border-radius: 15px;">
+                  <div class="card-header" style="border-top-left-radius: 15px;border-top-right-radius: 15px; background-color: #bb371a; color: #d5dbb3;" >
+                    <h3>Confirm Your Password</h3>
+                  </div>
+                    <div class="card-body" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background-color: #d5dbb3;">
+          
+                      <div class="row align-items-center pt-4 pb-3">
+                        <div class="col-md-3 ps-5">
+          
+                          <h6 class="mb-0">Password</h6>
+          
+                        </div>
+                        <div class="col-md-9 pe-5">
+          
+                          <input type="password" name="password" id="password" class="form-control form-control-md btn-outline-secondary" placeholder="********" required />
+          
+                        </div>
+                      </div>
+          
+                     
+    
+                      <div class="row align-items-center pt-4 pb-3">
+                        <div class="col-md-3 ps-5">
+          
+                          <h6 class="mb-0">Confirm Password</h6>
+          
+                        </div>
+                        <div class="col-md-9 pe-5">
+          
+                          <input type="password" name="password2" id="password2" class="form-control form-control-md btn-outline-secondary" placeholder="********"  required/>
+          
+                        </div>
+                      </div>
+          
+                    </div>
+                    
+                </div>
+                  <div class="text-center">
+                    <a href="login.php">
+                      <button type="submit" name="register" class="btn btn-primary btn-lg fontface2" style="color: #d5dbb3;">Sign Up</button>
+                    </a>
+                  </div>
+                </form>
+              </div>
+          </div>
       </section>
 
     <!-- Footer -->

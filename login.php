@@ -1,33 +1,65 @@
+<?php 
+session_start();
+
+if (isset($_SESSION["login"])){
+    header("Location: index.html");
+    exit;
+}
+require 'functions.php';
+
+if(isset($_POST["login"])){
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    $result = mysqli_query($conn,"SELECT * FROM user WHERE username ='$username'");
+
+    //cek username 
+    if (mysqli_num_rows($result) === 1){
+        // cek password
+        $row = mysqli_fetch_assoc($result);
+        if(password_verify($password,$row["password"])){
+            // set session
+            $_SESSION["login"] = true;
+            header("Location: index.html");
+            exit;
+        }
+    }
+    $error = true;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dapur Resep</title>
+    <title>Login</title>
     <link rel="shortcut icon" href="assets/Dapur-removebg-preview.png" type="image/jpg">
 
     <!-- css -->
-    <link rel="stylesheet" href="partners.css">
+    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="template.css">
+
 
 </head>
 <body>
 
     <!-- header -->
     <div class="fixed-top fontface2">
-      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 border-bottom warna1">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-2 mb-4 border-bottom warna1">
         <a href="index.html" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
           <img src="assets/Dapur.png" alt="logo" class="logoDapur">
         </a>
   
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 menuHeader">
           <li><a href="index.html" class="nav-link px-2 menuOff">Home</a></li>
-          <li><a href="recipe.html" class="nav-link px-2 menuOff">Recipes</a></li>
+          <li><a href="recipes.html" class="nav-link px-2 menuOff">Recipes</a></li>
           <li><a href="advancedSearch.html" class="nav-link px-2 menuOff">Advanced Search</a></li>
-          <li><a href="login.php" class="nav-link px-2 menuOff">Profile</a></li>
+          <li><a href="profile.html" class="nav-link px-2 menuOff">Profile</a></li>
         </ul>
         
         <div class="col-md-3">
@@ -46,59 +78,71 @@
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-9">
       
-              <h1 class="text-red mb-4 text-center font-weight-bold fontface2">OUR PARTNERS</h1>
-
-              <div class="card mb-5" style="border-radius: 15px;">
-                <div class="card-header fontface2" style="border-top-left-radius: 15px;border-top-right-radius: 15px; background-color: #bb371a; color: #d5dbb3;" >
-                  <h3>Ingredient Marketplace</h3>
+              <h1 class="text-red fontface2">Hello! Welcome Back</h1>
+              <h5 class="text-red mb-4 fontface1">Log in with your data that you entered during your registration</h5>
+      
+              <div class="card mb-4 fontface2" style="border-radius: 15px;">
+                <div class="card-header" style="border-top-left-radius: 15px;border-top-right-radius: 15px; background-color: #bb371a; color: #d5dbb3;" >
+                  <h3>Login</h3>
                 </div>
                 <div class="card-body mb" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; background-color: #d5dbb3;">
-                  <div class="row align-items-center pt-4 pb-3">
-                    <div class="col-xs-6 ml-auto mr-auto">
-                        <img src="assets/tokopedia.png" alt="" style="width:10vw;">
+                  <form action="" method="POST">
+                  
+                  <div class="row align-items-center py-3">
+                    <div class="col-md-3 ps-5">
+      
+                      <h6 class="mb-0">Username</h6>
+      
                     </div>
-                    <div class="col-xs-6 ml-0 mr-auto">
-                        <button class="btn btn-success text-left font-weight-bold border-right-0 rounded-0 square partnerbutton fontface2">Tokopedia 
-                        <a href="https://www.tokopedia.com">
-                          <button class="btn btn-success border-left-0 rounded-0 partnerbutton2" type="button">
-                                  <i class="fa fa-arrow-right"></i>
-                          </button>
-                        </a>
-                      </button>
+                    <div class="col-md-9 pe-5">
+      
+                      <input type="text" name="username" id="username" class="form-control form-control-md btn-outline-secondary" placeholder="input your username" required/>
+      
+                    </div>
+                  </div>
+    
+                  <div class="row align-items-center pt-4 pb-3">
+                    <div class="col-md-3 ps-5">
+      
+                      <h6 class="mb-0">Password</h6>
+      
+                    </div>
+                    <div class="col-md-9 pe-5">
+      
+                      <input type="password" name="password" id="password" class="form-control form-control-md btn-outline-secondary" placeholder="******" required />
+      
                     </div>
                   </div>
       
-
-                  <div class="row align-items-center pt-4 pb-3">
-                    <div class="col-xs-6 ml-auto mr-auto">
-                        <img src="assets/indomart.png" alt="" style="width:10vw;">
-                    </div>
-                    <div class="col-xs-6 ml-0 mr-auto">
-                        <button class="btn btn-success text-left font-weight-bold border-right-0 rounded-0 square partnerbutton fontface2">KlikIndomaret
-                          <a href="https://www.klikindomaret.com">
-                            <button class="btn btn-success border-left-0 rounded-0 partnerbutton2" type="button">
-                                    <i class="fa fa-arrow-right"></i>
-                            </button>
-                          </a>
-                        </button>
-                    </div>
-                  </div>
-                        
-                  <div class="row align-items-center pt-5 pb-5">
-                    <div class="col-xs-6 ml-auto mr-auto">
-                        <img src="assets/happyfresh.png" alt="" style="width:10vw;">
-                    </div>
-                    <div class="col-xs-6 ml-0 mr-auto">
-                        <button class="btn btn-success text-left font-weight-bold border-right-0 rounded-0 square partnerbutton fontface2">Happyfresh
-                          <a href="https://www.happyfresh.id">
-                            <button class="btn btn-success border-left-0 rounded-0 partnerbutton2" type="button">
-                                    <i class="fa fa-arrow-right"></i>
-                            </button>
-                          </a>
-                        </button>
-                    </div>
-                  </div>
-
+                </div>
+            </div>
+                <div class="text-center mb-4">
+                    <!-- <a href="index.html"> -->
+                      <button type="submit" name="login" class="btn btn-primary btn-lg px-5" style="color: #d5dbb3;">Login</button>
+                      <?php if (isset ($error)){ ?>
+                        <p style="color: red; font-style:italic;">Incorrect username or password!</p>
+                      <?php } ?>
+                    <!-- </a> -->
+                </div>
+                </form>
+                <div>
+                    <h5 class="text-center mb-4">OR</h5>
+                </div>
+                <div class="text-center">
+                    <a href="index.html" class="btn btn-outline-secondary btnSignup mb-4"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-google mr-3" viewBox="0 0 16 16">
+                        <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                      </svg>Login with Email </a>
+                </div>
+                <div class="text-center">
+                    <a href="index.html" class="btn btn-outline-secondary btnSignup mb-4"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook mr-3" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg> Login with Facebook </a>
+                </div>
+                <div>
+                    <h6 class="text-center">Don't have an account? <a href="register.php" class="text-yellow">Sign Up</a></h6>
+                </div>
+              </div>
+          </div>
       </section>
 
     <!-- Footer -->
